@@ -25,7 +25,7 @@ with mp_hands.Hands(
 
                 # Read feed
                 # ret, frame = cap.read()
-                frame=cv2.imread('Image/{}/{}.png'.format(action,sequence))
+                frame=cv2.imread('MP_Data/{}/{}.png'.format(action,sequence))
                 # frame=cv2.imread('{}{}.png'.format(action,sequence))
                 # frame=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 
@@ -38,17 +38,18 @@ with mp_hands.Hands(
                 
                 # NEW Apply wait logic
                 if frame_num == 0:
-                    cv2.putText(image, 'STARTING COLLECTION', (120,200), 
-                               cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255, 0), 4, cv2.LINE_AA)
-                    cv2.putText(image, 'Collecting frames for {} Video Number {}'.format(action, sequence), (15,12), 
+                    # cv2.putText(image, 'STARTING ', (120,200), 
+                    #            cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255, 0), 4, cv2.LINE_AA)
+                    cv2.putText(image, 'Collecting frames for {} Image {}'.format(action, sequence), (15,12), 
                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
                     # Show to screen
                     cv2.imshow('OpenCV Feed', image)
                     cv2.waitKey(200)
                 else: 
-                    cv2.putText(image, 'Collecting frames for {} Video Number {}'.format(action, sequence), (15,12), 
+                    cv2.putText(image, 'Collecting frames for {} Image {}'.format(action, sequence), (15,12), 
                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
                     # Show to screen
+                    
                     cv2.imshow('OpenCV Feed', image)
                 
                 # NEW Export keypoints

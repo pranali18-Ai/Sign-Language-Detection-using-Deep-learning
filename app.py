@@ -30,7 +30,6 @@ predictions = []
 threshold = 0.8 
 
 cap = cv2.VideoCapture(0)
-# cap = cv2.VideoCapture("https://192.168.43.41:8080/video")
 # Set mediapipe model 
 with mp_hands.Hands(
     model_complexity=0,
